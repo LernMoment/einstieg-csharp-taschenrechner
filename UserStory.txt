@@ -1,0 +1,20 @@
+User Stories Taschenrechner
+
+User Story Vorlage: Als <Rolle/Anwendertyp> möchte ich <Ziel/Wunsch/Funktion>, um <Nutzen>
+ 
+Titel: Addieren
+Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen
+Akzeptanzkriterien:
+	* Gleitkommazahlen zwischen -10.0 und 100.0 können addiert werden
+
+Status:
+	* Implementiert
+	* Getestet
+	* Erledigt
+
+
+Titel: Starten
+Story: Als Benutzer möchte ich den Taschenrechner schnell aufrufen können, um mein Resultat schnell zu bekommen
+Akzeptanzkriterien:
+	* Die Anwendung wir innerhalb von 2 Sekunden auf einem Rechner gestartet
+	* Die Anwendung läuft auf einem Rechner mit Windows 10
