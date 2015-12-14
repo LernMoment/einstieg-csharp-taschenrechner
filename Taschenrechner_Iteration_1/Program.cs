@@ -13,11 +13,11 @@ namespace Taschenrechner_Iteration_1
             string zweiterSummand = Console.ReadLine();
 
             // Wandel Text in Gleikommazahlen
-            float ersterSummandAlsZahl = Convert.ToSingle(ersterSummand);
-            float zweiterSummandAlsZahl = Convert.ToSingle(zweiterSummand);
+            double ersterSummandAlsZahl = Convert.ToDouble(ersterSummand);
+            double zweiterSummandAlsZahl = Convert.ToDouble(zweiterSummand);
 
             // Berechnung ausführen
-            float summe = ersterSummandAlsZahl + zweiterSummandAlsZahl;
+            double summe = ersterSummandAlsZahl + zweiterSummandAlsZahl;
 
             // Ausgabe
             Console.WriteLine("Die Summe ist: {0}", summe);
