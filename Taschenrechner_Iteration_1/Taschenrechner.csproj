@@ -7,8 +7,8 @@
     <ProjectGuid>{01BF0DC8-2BA2-40DF-83C7-7D1B822ECB67}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Taschenrechner_Iteration_1</RootNamespace>
-    <AssemblyName>Taschenrechner_Iteration_1</AssemblyName>
+    <RootNamespace>Taschenrechner</RootNamespace>
+    <AssemblyName>Taschenrechner</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
