@@ -1,0 +1,6 @@
+TAG: Iteration_1_Fertig
+ART: Internes Entwicklungsrelease
+STATUS: Informell getestet - kann an Tester verteilt werden.
+FUNKTION:
+	* Addieren von Gleitkommazahlen
+	* Schnelles Starten (einfach die EXE ausführen)
