@@ -21,6 +21,12 @@ namespace Taschenrechner
 
             // Ausgabe
             Console.WriteLine("Die Summe ist: {0}", summe);
+            WarteAufBenutzerEingabe();
+        }
+
+        static void WarteAufBenutzerEingabe()
+        {
+            Console.Write("Zum beenden bitte Return drücken!");
             Console.ReadLine();
         }
     }
