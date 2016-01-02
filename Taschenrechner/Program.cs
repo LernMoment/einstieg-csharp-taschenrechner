@@ -4,6 +4,23 @@ namespace Taschenrechner
 {
     class Program
     {
+        // METHODE DEFINIEREN (in 7 Schritten)
+        // (optional) Modifizierer definieren
+        // Datentyp des Rückgabewertes definieren
+        // Methodennamen definieren
+        // Rundeklammern an den Methodennamen anfügen
+        // Überlegen welche Parameter benötigt werden (optional diese definieren)
+        // Geschweifte Klammern einfügen
+        // Methode implementieren (Anweisungen in den Methodenrumpf schreiben)
+
+        static string HoleSummanden(string ausgabeText)
+        {
+            Console.Write(ausgabeText);
+            string summand = Console.ReadLine();
+
+            return summand;
+        }
+
         static void Main(string[] args)
         {
             // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
