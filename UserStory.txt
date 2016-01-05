@@ -7,7 +7,8 @@ Story: Als Entwickler möchte ich den Quellcode sauber strukturieren, um später e
 Akzeptanzkriterien:
 	* Das Single Level of Abstraction Prinzip wird eingehalten, oder eine Abweichung ist begründet und dokumentiert
 Status:
-	* Offen
+	* Umgesetzt
+	* Erledigt
 
 Titel: Subtrahieren
 Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Differenz berechnen zu lassen

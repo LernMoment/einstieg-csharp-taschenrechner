@@ -11,6 +11,7 @@ namespace Taschenrechner
             string zweiterSummand = HoleSummanden("Bitte gib den zweiten Summanden ein: ");
 
             // Wandel Text in Gleikommazahlen
+            // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
             double ersterSummandAlsZahl = Convert.ToDouble(ersterSummand);
             double zweiterSummandAlsZahl = Convert.ToDouble(zweiterSummand);
 
