@@ -38,6 +38,13 @@ namespace Taschenrechner
             return summe;
         }
 
+        static double Subtrahiere(double minuend, double subtrahent)
+        {
+            double differenz = minuend - subtrahent;
+
+            return differenz;
+        }
+
         static void WarteAufBenutzerEingabe()
         {
             Console.Write("Zum beenden bitte Return drücken!");
