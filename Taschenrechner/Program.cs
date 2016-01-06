@@ -9,6 +9,7 @@ namespace Taschenrechner
             // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
             string ersteZahlAlsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
             string zweiteZahlAlsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
+            string operation = HoleBenutzerEingabe("Bitte gib die auszuführende Operation ein (+ oder -): ");
 
             // Wandel Text in Gleikommazahlen
             // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
