@@ -17,10 +17,23 @@ namespace Taschenrechner
             double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
             // Berechnung ausführen
-            double summe = Addiere(ersteZahl, zweiteZahl);
+            double resultat = 0;
+            if (operation == "+")
+            {
+                resultat = Addiere(ersteZahl, zweiteZahl);
+                Console.WriteLine("Die Summe ist: {0}", resultat);
+            }
+            else if (operation == "-")
+            {
+                resultat = Subtrahiere(ersteZahl, zweiteZahl);
+                Console.WriteLine("Die Differenz ist: {0}", resultat);
+            }
+            else
+            {
+                Console.WriteLine("Du hast eine ungültige Auswahl der Operation getroffen.");
+            }
 
             // Ausgabe
-            Console.WriteLine("Die Summe ist: {0}", summe);
             HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
         }
 
