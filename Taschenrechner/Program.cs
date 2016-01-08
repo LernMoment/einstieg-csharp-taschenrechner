@@ -18,19 +18,26 @@ namespace Taschenrechner
 
             // Berechnung ausführen
             double resultat = 0;
-            if (operation == "+")
+            switch (operation)
             {
-                resultat = Addiere(ersteZahl, zweiteZahl);
-                Console.WriteLine("Die Summe ist: {0}", resultat);
-            }
-            else if (operation == "-")
-            {
-                resultat = Subtrahiere(ersteZahl, zweiteZahl);
-                Console.WriteLine("Die Differenz ist: {0}", resultat);
-            }
-            else
-            {
-                Console.WriteLine("Du hast eine ungültige Auswahl der Operation getroffen.");
+                case "+":
+                    resultat = Addiere(ersteZahl, zweiteZahl);
+                    Console.WriteLine("Die Summe ist: {0}", resultat);
+                    break;
+
+                case "-":
+                    resultat = Subtrahiere(ersteZahl, zweiteZahl);
+                    Console.WriteLine("Die Differenz ist: {0}", resultat);
+                    break;
+
+                case "/":
+                case "*":
+                    Console.WriteLine("Diese Operation wird bald unterstützt. Versporchen ;-)!");
+                    break;
+
+                default:
+                    Console.WriteLine("Du hast eine ungültige Auswahl der Operation getroffen.");
+                    break;
             }
 
             // Ausgabe
