@@ -32,7 +32,7 @@ namespace Taschenrechner
 
                 case "/":
                 case "*":
-                    Console.WriteLine("Diese Operation wird bald unterstützt. Versporchen ;-)!");
+                    Console.WriteLine("Diese Operation wird bald unterstützt. Versprochen ;-)!");
                     break;
 
                 default:
