@@ -17,6 +17,22 @@ namespace Taschenrechner
             double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
             // Berechnung ausführen
+            double resultat = Berechnung(ersteZahl, zweiteZahl, operation);
+
+            // Ausgabe
+            HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
+        }
+
+        static string HoleBenutzerEingabe(string ausgabeText)
+        {
+            Console.Write(ausgabeText);
+            string summand = Console.ReadLine();
+
+            return summand;
+        }
+
+        static double Berechnung(double ersteZahl, double zweiteZahl, string operation)
+        {
             double resultat = 0;
             switch (operation)
             {
@@ -45,16 +61,7 @@ namespace Taschenrechner
                     break;
             }
 
-            // Ausgabe
-            HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
-        }
-
-        static string HoleBenutzerEingabe(string ausgabeText)
-        {
-            Console.Write(ausgabeText);
-            string summand = Console.ReadLine();
-
-            return summand;
+            return resultat;
         }
 
         static double Addiere(double ersterSummand, double zweiterSummand)
