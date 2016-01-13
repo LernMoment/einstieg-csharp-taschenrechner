@@ -20,15 +20,14 @@ namespace Taschenrechner
             double resultat = Berechnung(ersteZahl, zweiteZahl, operation);
 
             // Ausgabe
+            GibResultatAus(resultat, operation);
             HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
         }
 
         static string HoleBenutzerEingabe(string ausgabeText)
         {
             Console.Write(ausgabeText);
-            string summand = Console.ReadLine();
-
-            return summand;
+            return Console.ReadLine();
         }
 
         static double Berechnung(double ersteZahl, double zweiteZahl, string operation)
@@ -38,21 +37,41 @@ namespace Taschenrechner
             {
                 case "+":
                     resultat = Addiere(ersteZahl, zweiteZahl);
-                    Console.WriteLine("Die Summe ist: {0}", resultat);
                     break;
 
                 case "-":
                     resultat = Subtrahiere(ersteZahl, zweiteZahl);
-                    Console.WriteLine("Die Differenz ist: {0}", resultat);
                     break;
 
                 case "/":
                     resultat = Dividiere(ersteZahl, zweiteZahl);
-                    Console.WriteLine("Der Wert des Quotienten ist: {0}", resultat);
                     break;
 
                 case "*":
                     resultat = Multipliziere(ersteZahl, zweiteZahl);
+                    break;
+            }
+
+            return resultat;
+        }
+
+        static void GibResultatAus(double resultat, string operation)
+        {
+            switch (operation)
+            {
+                case "+":
+                    Console.WriteLine("Die Summe ist: {0}", resultat);
+                    break;
+
+                case "-":
+                    Console.WriteLine("Die Differenz ist: {0}", resultat);
+                    break;
+
+                case "/":
+                    Console.WriteLine("Der Wert des Quotienten ist: {0}", resultat);
+                    break;
+
+                case "*":
                     Console.WriteLine("Das Produkt ist: {0}", resultat);
                     break;
 
@@ -60,8 +79,6 @@ namespace Taschenrechner
                     Console.WriteLine("Du hast eine ungültige Auswahl der Operation getroffen.");
                     break;
             }
-
-            return resultat;
         }
 
         static double Addiere(double ersterSummand, double zweiterSummand)
