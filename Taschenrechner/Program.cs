@@ -9,7 +9,7 @@ namespace Taschenrechner
             // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
             string ersteZahlAlsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
             string zweiteZahlAlsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
-            string operation = HoleBenutzerEingabe("Bitte gib die auszuführende Operation ein (+, -, /): ");
+            string operation = HoleBenutzerEingabe("Bitte gib die auszuführende Operation ein (+, -, /, *): ");
 
             // Wandel Text in Gleikommazahlen
             // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
@@ -36,7 +36,8 @@ namespace Taschenrechner
                     break;
 
                 case "*":
-                    Console.WriteLine("Diese Operation wird bald unterstützt. Versprochen ;-)!");
+                    resultat = Multipliziere(ersteZahl, zweiteZahl);
+                    Console.WriteLine("Das Produkt ist: {0}", resultat);
                     break;
 
                 default:
@@ -73,6 +74,11 @@ namespace Taschenrechner
         static double Dividiere(double dividend, double divisor)
         {
             return dividend / divisor;
+        }
+
+        static double Multipliziere(double multiplikator, double multiplikand)
+        {
+            return multiplikator * multiplikand;
         }
     }
 }
