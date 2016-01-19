@@ -15,14 +15,18 @@ Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Produkt berechnen 
 Akzeptanzkriterien:
 	* Gleitkommazahlen zwischen -10.0 und 100.0 können multipliziert werden
 Status:
-	* Offen
+	* Implementiert
+	* Getestet
+	* Erledigt
 
 Titel: Dividieren
 Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Quotienten berechnen zu lassen
 Akzeptanzkriterien:
 	* Gleitkommazahlen zwischen -10.0 und 100.0 können dividiert werden
 Status:
-	* Offen
+	* Implementiert
+	* Getestet
+	* Erledigt
 
 Titel: Subtrahieren
 Story: Als Benutzer möchte ich zwei Zahlen eingeben, um deren Differenz berechnen zu lassen
