@@ -1,0 +1,10 @@
+TAG: Iteration_2_Fertig
+ART: Internes Entwicklungsrelease
+STATUS: Informell getestet - kann an Tester verteilt werden.
+FUNKTION:
+	* Überarbeitete Softwarestruktur um eine höhere Wartbarkeit zu erreichen
+	* Dividieren von Gleitkommazahlen
+	* Multiplizieren von Gleitkommazahlen
+	* Subtrahieren von Gleitkommazahlen
+	* Addieren von Gleitkommazahlen
+	* Schnelles Starten (einfach die EXE ausführen)
