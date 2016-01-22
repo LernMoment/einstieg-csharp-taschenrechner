@@ -2,29 +2,33 @@
 {
     class RechnerModel
     {
-        public double Berechne(double ersteZahl, double zweiteZahl, string operation)
+        public double Resultat { get; private set; }
+
+        public RechnerModel()
         {
-            double resultat = 0;
+            Resultat = 0;
+        }
+
+        public void Berechne(double ersteZahl, double zweiteZahl, string operation)
+        {
             switch (operation)
             {
                 case "+":
-                    resultat = Addiere(ersteZahl, zweiteZahl);
+                    Resultat = Addiere(ersteZahl, zweiteZahl);
                     break;
 
                 case "-":
-                    resultat = Subtrahiere(ersteZahl, zweiteZahl);
+                    Resultat = Subtrahiere(ersteZahl, zweiteZahl);
                     break;
 
                 case "/":
-                    resultat = Dividiere(ersteZahl, zweiteZahl);
+                    Resultat = Dividiere(ersteZahl, zweiteZahl);
                     break;
 
                 case "*":
-                    resultat = Multipliziere(ersteZahl, zweiteZahl);
+                    Resultat = Multipliziere(ersteZahl, zweiteZahl);
                     break;
             }
-
-            return resultat;
         }
 
         private double Addiere(double ersterSummand, double zweiterSummand)

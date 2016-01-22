@@ -18,10 +18,10 @@ namespace Taschenrechner
 
             // Berechnung ausführen
             RechnerModel model = new RechnerModel();
-            double resultat = model.Berechne(ersteZahl, zweiteZahl, operation);
+            model.Berechne(ersteZahl, zweiteZahl, operation);
 
             // Ausgabe
-            GibResultatAus(resultat, operation);
+            GibResultatAus(model.Resultat, operation);
             HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
         }
 
