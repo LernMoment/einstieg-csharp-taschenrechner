@@ -6,7 +6,8 @@ namespace Taschenrechner
     {
         static void Main(string[] args)
         {
-            ConsoleView view = new ConsoleView();
+            RechnerModel model = new RechnerModel();
+            ConsoleView view = new ConsoleView(model);
             string ersteZahlAlsString = view.HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
             string zweiteZahlAlsString = view.HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
             string operation = view.HoleBenutzerEingabe("Bitte gib die auszuführende Operation ein (+, -, /, *): ");
@@ -17,11 +18,10 @@ namespace Taschenrechner
             double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
             // Berechnung ausführen
-            RechnerModel model = new RechnerModel();
             model.Berechne(ersteZahl, zweiteZahl, operation);
 
             // Ausgabe
-            view.GibResultatAus(model.Resultat, operation);
+            view.GibResultatAus(operation);
             view.HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
         }
 
