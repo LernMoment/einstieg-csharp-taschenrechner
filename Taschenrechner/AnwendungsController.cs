@@ -15,14 +15,9 @@ namespace Taschenrechner
 
         public void Ausfuehren()
         {
-            string ersteZahlAlsString = view.HoleZahlVomBenutzer();
+            double ersteZahl = view.HoleZahlVomBenutzer();
             string operation = view.HoleOperatorVomBenutzer();
-            string zweiteZahlAlsString = view.HoleZahlVomBenutzer();
-
-            // Wandel Text in Gleikommazahlen
-            // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
-            double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
-            double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
+            double zweiteZahl = view.HoleZahlVomBenutzer();
 
             // Berechnung ausführen
             model.Berechne(ersteZahl, zweiteZahl, operation);
