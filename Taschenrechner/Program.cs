@@ -17,7 +17,8 @@ namespace Taschenrechner
             double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
 
             // Berechnung ausführen
-            double resultat = Berechnung(ersteZahl, zweiteZahl, operation);
+            RechnerModel model = new RechnerModel();
+            double resultat = model.Berechne(ersteZahl, zweiteZahl, operation);
 
             // Ausgabe
             GibResultatAus(resultat, operation);
@@ -28,31 +29,6 @@ namespace Taschenrechner
         {
             Console.Write(ausgabeText);
             return Console.ReadLine();
-        }
-
-        static double Berechnung(double ersteZahl, double zweiteZahl, string operation)
-        {
-            double resultat = 0;
-            switch (operation)
-            {
-                case "+":
-                    resultat = Addiere(ersteZahl, zweiteZahl);
-                    break;
-
-                case "-":
-                    resultat = Subtrahiere(ersteZahl, zweiteZahl);
-                    break;
-
-                case "/":
-                    resultat = Dividiere(ersteZahl, zweiteZahl);
-                    break;
-
-                case "*":
-                    resultat = Multipliziere(ersteZahl, zweiteZahl);
-                    break;
-            }
-
-            return resultat;
         }
 
         static void GibResultatAus(double resultat, string operation)
@@ -81,28 +57,5 @@ namespace Taschenrechner
             }
         }
 
-        static double Addiere(double ersterSummand, double zweiterSummand)
-        {
-            double summe = ersterSummand + zweiterSummand;
-
-            return summe;
-        }
-
-        static double Subtrahiere(double minuend, double subtrahent)
-        {
-            double differenz = minuend - subtrahent;
-
-            return differenz;
-        }
-
-        static double Dividiere(double dividend, double divisor)
-        {
-            return dividend / divisor;
-        }
-
-        static double Multipliziere(double multiplikator, double multiplikand)
-        {
-            return multiplikator * multiplikand;
-        }
     }
 }
