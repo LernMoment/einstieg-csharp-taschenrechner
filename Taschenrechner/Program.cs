@@ -8,54 +8,9 @@ namespace Taschenrechner
         {
             RechnerModel model = new RechnerModel();
             ConsoleView view = new ConsoleView(model);
-            string ersteZahlAlsString = view.HoleZahlVomBenutzer();
-            string operation = view.HoleOperatorVomBenutzer();
-            string zweiteZahlAlsString = view.HoleZahlVomBenutzer();
+            AnwendungsController controller = new AnwendungsController(view, model);
 
-            // Wandel Text in Gleikommazahlen
-            // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
-            double ersteZahl = Convert.ToDouble(ersteZahlAlsString);
-            double zweiteZahl = Convert.ToDouble(zweiteZahlAlsString);
-
-            // Berechnung ausführen
-            model.Berechne(ersteZahl, zweiteZahl, operation);
-
-            // Ausgabe
-            view.GibResultatAus(operation);
-            view.WarteAufEndeDurchBenutzer();
+            controller.Ausfuehren();
         }
-
-        static string HoleBenutzerEingabe(string ausgabeText)
-        {
-            Console.Write(ausgabeText);
-            return Console.ReadLine();
-        }
-
-        static void GibResultatAus(double resultat, string operation)
-        {
-            switch (operation)
-            {
-                case "+":
-                    Console.WriteLine("Die Summe ist: {0}", resultat);
-                    break;
-
-                case "-":
-                    Console.WriteLine("Die Differenz ist: {0}", resultat);
-                    break;
-
-                case "/":
-                    Console.WriteLine("Der Wert des Quotienten ist: {0}", resultat);
-                    break;
-
-                case "*":
-                    Console.WriteLine("Das Produkt ist: {0}", resultat);
-                    break;
-
-                default:
-                    Console.WriteLine("Du hast eine ungültige Auswahl der Operation getroffen.");
-                    break;
-            }
-        }
-
     }
 }
