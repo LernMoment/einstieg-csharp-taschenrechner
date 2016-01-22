@@ -6,10 +6,10 @@ namespace Taschenrechner
     {
         static void Main(string[] args)
         {
-            // User Story "Addieren": Als Benutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
-            string ersteZahlAlsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
-            string zweiteZahlAlsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
-            string operation = HoleBenutzerEingabe("Bitte gib die auszuführende Operation ein (+, -, /, *): ");
+            ConsoleView view = new ConsoleView();
+            string ersteZahlAlsString = view.HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
+            string zweiteZahlAlsString = view.HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
+            string operation = view.HoleBenutzerEingabe("Bitte gib die auszuführende Operation ein (+, -, /, *): ");
 
             // Wandel Text in Gleikommazahlen
             // TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
@@ -21,8 +21,8 @@ namespace Taschenrechner
             model.Berechne(ersteZahl, zweiteZahl, operation);
 
             // Ausgabe
-            GibResultatAus(model.Resultat, operation);
-            HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
+            view.GibResultatAus(model.Resultat, operation);
+            view.HoleBenutzerEingabe("Zum beenden bitte Return drücken!");
         }
 
         static string HoleBenutzerEingabe(string ausgabeText)
