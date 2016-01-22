@@ -23,7 +23,7 @@ namespace Taschenrechner
             model.Berechne(ersteZahl, zweiteZahl, operation);
 
             // Ausgabe
-            view.GibResultatAus(operation);
+            view.GibResultatAus();
             view.WarteAufEndeDurchBenutzer();
         }
     }
