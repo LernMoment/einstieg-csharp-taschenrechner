@@ -9,13 +9,37 @@ namespace Taschenrechner
         public ConsoleView(RechnerModel model)
         {
             this.model = model;
+            BenutzerWillBeenden = false;
         }
 
-        public void HoleEingabenVomBenutzer()
+        public bool BenutzerWillBeenden { get; private set; }
+
+        public void HoleEingabenFuerErsteBerechnungVomBenutzer()
         {
             model.ErsteZahl = HoleZahlVomBenutzer();
             model.Operation = HoleOperatorVomBenutzer();
             model.ZweiteZahl = HoleZahlVomBenutzer();
+        }
+
+        public void HoleEingabenFuerFortlaufendeBerechnung()
+        {
+            string eingabe = HoleNaechsteAktionVomBenutzer();
+
+            if (eingabe == "Fertig")
+            {
+                BenutzerWillBeenden = true;
+            }
+            else
+            {
+                model.ErsteZahl = model.Resultat;
+                model.ZweiteZahl = Convert.ToDouble(eingabe);
+            }
+        }
+
+        private string HoleNaechsteAktionVomBenutzer()
+        {
+            Console.Write("Bitte gib eine weitere Zahl ein (Fertig zum Beenden): ");
+            return Console.ReadLine();
         }
 
         private double HoleZahlVomBenutzer()
@@ -31,12 +55,6 @@ namespace Taschenrechner
         {
             Console.Write("Bitte gib die auszuführende Operation ein (+, -, /, *): ");
             return Console.ReadLine();
-        }
-
-        public void WarteAufEndeDurchBenutzer()
-        {
-            Console.Write("Zum beenden bitte Return drücken!");
-            Console.ReadLine();
         }
 
         public void GibResultatAus()
