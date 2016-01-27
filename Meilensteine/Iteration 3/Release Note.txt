@@ -1,0 +1,7 @@
+TAG: Iteration_3_Fertig
+ART: Internes Entwicklungsrelease
+STATUS: Informell getestet - kann an Tester verteilt werden.
+FUNKTION:
+	* Verwendet objektorientiertes Design (MVC-Muster)
+	* Kann mehrer Operationen nach einander ausführen (Fortlaufende Berechnung)
+	* Wird über das Kommando "Fertig" vom Benutzer beendet
