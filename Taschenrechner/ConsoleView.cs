@@ -25,7 +25,7 @@ namespace Taschenrechner
         {
             string eingabe = HoleNaechsteAktionVomBenutzer();
 
-            if (eingabe == "Fertig")
+            if (eingabe == "FERTIG")
             {
                 BenutzerWillBeenden = true;
             }
@@ -38,7 +38,7 @@ namespace Taschenrechner
 
         private string HoleNaechsteAktionVomBenutzer()
         {
-            Console.Write("Bitte gib eine weitere Zahl ein (Fertig zum Beenden): ");
+            Console.Write("Bitte gib eine weitere Zahl ein (FERTIG zum Beenden): ");
             return Console.ReadLine();
         }
 
