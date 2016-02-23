@@ -1,0 +1,7 @@
+TAG: Release_1-0
+ART: Release
+STATUS: Informell getestet - kann an Benutzer verteilt werden.
+FUNKTION:
+	* Bedienung wurde verbessert (insbesondere Eingabevalidierung)
+	* Kommt jetzt mit eigener Installationsroutine
+	* Verwendet erste Unit-Tests um Stabilität zu erhöhen
