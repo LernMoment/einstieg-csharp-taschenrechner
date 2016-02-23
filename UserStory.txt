@@ -8,7 +8,9 @@ Akzeptanzkriterien:
 	* Eine fehlerhafte Eingabe wird nach dem betätigen von Return angezeigt
 	* Der Benutzer bekommt Hinweise wie er Zahlen, Operationen und Kommandos richtig eingeben kann
 Status:
-	* Offen
+	* Implementiert
+	* Getestet
+	* Erledigt
 
 Titel: Beenden
 Story: Als Benutzer möchte ich "Fertig" anstelle einer weiteren Zahl eingeben, um den Taschenrechner zu beenden.
