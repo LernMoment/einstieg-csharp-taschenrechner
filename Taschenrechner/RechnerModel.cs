@@ -66,7 +66,8 @@
         public void Berechne()
         {
             // Es gab einen Fehler und somit ist das RechnerModel in einem inkonsistenten
-            // Zustand. Daher kann hier keine Berechnung ausgeführt werden.
+            // Zustand. Um Probleme bei der Berechnung zu vermeiden, führen wir sie gar nicht
+            // erst aus - defensive Programmierung!
             if (AktuellerFehler != Fehler.Keiner)
             {
                 return;
