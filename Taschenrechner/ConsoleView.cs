@@ -67,8 +67,22 @@ namespace Taschenrechner
 
         private string HoleOperatorVomBenutzer()
         {
-            Console.Write("Bitte gib die auszuführende Operation ein (+, -, /, *): ");
-            return Console.ReadLine();
+            string operation;
+
+            do
+            {
+                Console.Write("Bitte gib die auszuführende Operation ein (+, -, /, *): ");
+                operation = Console.ReadLine();
+                model.Operation = operation;
+
+                if (model.AktuellerFehler == Fehler.UngueltigeOperation)
+                {
+                    Console.WriteLine("FEHLER: Die eingegebene Operation wird nicht unterstützt.");
+                }
+            }
+            while (model.AktuellerFehler == Fehler.UngueltigeOperation);
+
+            return operation;
         }
 
         public void GibResultatAus()
