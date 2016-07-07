@@ -4,15 +4,52 @@
     public enum Fehler
     {
         Keiner,
+        GrenzwertUeberschreitung,
         UngueltigeOperation
     }
 
     public class RechnerModel
     {
+        public static double ObererGrenzwert { get { return 100.0; } }
+        public static double UntererGrenzwert { get { return -10.0; } }
+         
+        public RechnerModel()
+        {
+            Resultat = 0;
+            Operation = "unbekannt";
+            AktuellerFehler = Fehler.Keiner;
+        }
+
         public double Resultat { get; private set; }
-        public double ErsteZahl { get; set; }
-        public double ZweiteZahl { get; set; }
         public Fehler AktuellerFehler { get; private set; }
+
+        private double ersteZahl = 0;
+        public double ErsteZahl
+        {
+            get { return ersteZahl; }
+            set
+            {
+                if (ersteZahl != value)
+                {
+                    AktuellerFehler = GrenzwertCheck(value);
+                    ersteZahl = value;
+                }
+            }
+        }
+
+        private double zweiteZahl = 0;
+        public double ZweiteZahl
+        {
+            get { return zweiteZahl; }
+            set
+            {
+                if (zweiteZahl != value)
+                {
+                    AktuellerFehler = GrenzwertCheck(value);
+                    zweiteZahl = value;
+                }
+            }
+        }
 
         private string operation = "ungueltig";
         public string Operation
@@ -56,13 +93,6 @@
             }
         }
 
-        public RechnerModel()
-        {
-            Resultat = 0;
-            Operation = "unbekannt";
-            AktuellerFehler = Fehler.Keiner;
-        }
-
         public void Berechne()
         {
             // Es gab einen Fehler und somit ist das RechnerModel in einem inkonsistenten
@@ -100,6 +130,18 @@
         public void FehlerZurueckSetzen()
         {
             AktuellerFehler = Fehler.Keiner;
+        }
+
+        private Fehler GrenzwertCheck(double zahl)
+        {
+            Fehler resultat = Fehler.Keiner;
+
+            if ((zahl < UntererGrenzwert) || (zahl > ObererGrenzwert))
+            {
+                resultat = Fehler.GrenzwertUeberschreitung;
+            }
+
+            return resultat;
         }
 
         private double Addiere(double ersterSummand, double zweiterSummand)

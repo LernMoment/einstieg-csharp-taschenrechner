@@ -16,9 +16,32 @@ namespace Taschenrechner
 
         public void HoleEingabenFuerErsteBerechnungVomBenutzer()
         {
-            model.ErsteZahl = HoleZahlVomBenutzer();
+            // TODO: Refactoring benötigt - Probleme: unübersichtlich, nicht DRY, nicht SLA!
+
+            // Eingabe und Validierung der ersten Zahl
+            do
+            {
+                model.ErsteZahl = HoleZahlVomBenutzer();
+                if (model.AktuellerFehler == Fehler.GrenzwertUeberschreitung)
+                {
+                    Console.WriteLine("FEHLER: Zahl muss größer als {0} und kleiner als {1} sein.", RechnerModel.UntererGrenzwert, RechnerModel.ObererGrenzwert);
+                }
+            }
+            while (model.AktuellerFehler == Fehler.GrenzwertUeberschreitung);
+
+            // Eingabe und Validierung des Operators
             model.Operation = HoleOperatorVomBenutzer();
-            model.ZweiteZahl = HoleZahlVomBenutzer();
+
+            // Eingabe und Validierung der zweiten Zahl
+            do
+            {
+                model.ZweiteZahl = HoleZahlVomBenutzer();
+                if (model.AktuellerFehler == Fehler.GrenzwertUeberschreitung)
+                {
+                    Console.WriteLine("FEHLER: Zahl muss größer als {0} und kleiner als {1} sein.", RechnerModel.UntererGrenzwert, RechnerModel.ObererGrenzwert);
+                }
+            }
+            while (model.AktuellerFehler == Fehler.GrenzwertUeberschreitung);
         }
 
         public void HoleEingabenFuerFortlaufendeBerechnung()
