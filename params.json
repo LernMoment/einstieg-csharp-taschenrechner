@@ -1,0 +1,6 @@
+{
+  "name": "Einstieg-csharp-taschenrechner",
+  "tagline": "Quellcode für den Taschenrechner welcher im Udemy Kurs \"Einstieg in C#\" erstellt wird.",
+  "body": "# Über\r\n\r\nDer Udemy-Kurs [Einstieg in C# - Software programmieren wie ein Profi](http://www.lernmoment.de/einstieg-csharp/), wird hauptsächlich anhand eines durchgängigen Beispiels umgesetzt. Dieses ist inklusive sämtlicher Commits und Issues in diesem Verzeichnis abgebildet.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
