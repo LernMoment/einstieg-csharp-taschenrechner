@@ -48,7 +48,7 @@ namespace Taschenrechner
         {
             string eingabe = HoleNaechsteAktionVomBenutzer();
 
-            if (eingabe.ToUpper() == "FERTIG")
+            if (eingabe.ToUpper() == "FERTIG" || eingabe == "")
             {
                 BenutzerWillBeenden = true;
             }
