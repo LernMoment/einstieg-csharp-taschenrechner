@@ -13,6 +13,7 @@ namespace Taschenrechner
         }
 
         public bool BenutzerWillBeenden { get; private set; }
+        private string textAusgabe = "";
 
         public void HoleEingabenFuerErsteBerechnungVomBenutzer()
         {
@@ -42,50 +43,43 @@ namespace Taschenrechner
                 }
             }
             while (model.AktuellerFehler == Fehler.GrenzwertUeberschreitung);
+            textAusgabe = model.ErsteZahl + " " + model.Operation + " " + model.ZweiteZahl + " ";
         }
 
         public void HoleEingabenFuerFortlaufendeBerechnung()
         {
             string eingabe = HoleNaechsteAktionVomBenutzer();
 
-            if (eingabe.ToUpper() == "FERTIG" || eingabe == "")
+            if (eingabe.ToUpper() == "FERTIG")
             {
                 BenutzerWillBeenden = true;
             }
             else
             {
                 model.ErsteZahl = model.Resultat;
-                model.ZweiteZahl = Convert.ToDouble(eingabe);
+                //model.ZweiteZahl = Convert.ToDouble(eingabe);
+                model.ZweiteZahl = eingabeAufZahlUeberpruefen(eingabe);
+                textAusgabe += model.Operation + " " + model.ZweiteZahl + " ";
             }
         }
 
         private string HoleNaechsteAktionVomBenutzer()
         {
-            Console.Write("Bitte gib eine weitere Zahl ein (FERTIG zum Beenden): ");
-            return Console.ReadLine();
+            string eingabe = "";
+            while (eingabe == "")
+            {
+                Console.Write("Bitte gib eine weitere Zahl ein (FERTIG zum Beenden): ");
+                eingabe = Console.ReadLine();
+            }
+            return eingabe;
         }
 
         private double HoleZahlVomBenutzer()
         {
             string eingabe;
-            double zahl;
             Console.Write("Bitte gib eine Zahl für die Berechnung ein: ");
             eingabe = Console.ReadLine();
-
-            while (!double.TryParse(eingabe, out zahl))
-            {
-                Console.WriteLine("Du musst eine gültige Gleitkommazahl eingeben!");
-                Console.WriteLine("Neben den Ziffern 0-9 sind lediglich die folgenden Sonderzeichen erlaubt: ,.-");
-                Console.WriteLine("Dabei muss das - als erstes Zeichen vor einer Ziffer gesetzt werden.");
-                Console.WriteLine("Der . fungiert als Trennzeichen an Tausenderstellen.");
-                Console.WriteLine("Das , ist das Trennzeichen für die Nachkommastellen.");
-                Console.WriteLine("Alle drei Sonderzeichen sind optional!");
-                Console.WriteLine();
-                Console.Write("Bitte gib erneut eine Zahl für die Berechnung ein: ");
-                eingabe = Console.ReadLine();
-            }
-
-            return zahl;
+            return eingabeAufZahlUeberpruefen(eingabe);
         }
 
         private string HoleOperatorVomBenutzer()
@@ -110,6 +104,9 @@ namespace Taschenrechner
 
         public void GibResultatAus()
         {
+
+            Console.WriteLine(textAusgabe + "= " + model.Resultat);
+            /*
             switch (model.Operation)
             {
                 case "+":
@@ -132,6 +129,26 @@ namespace Taschenrechner
                     Console.WriteLine("Du hast eine ungültige Auswahl der Operation getroffen.");
                     break;
             }
+            */
+        }
+
+        public double eingabeAufZahlUeberpruefen(string eingabe)
+        {
+            double zahl;
+            while (!double.TryParse(eingabe, out zahl))
+            {
+                Console.WriteLine("Du musst eine gültige Gleitkommazahl eingeben!");
+                Console.WriteLine("Neben den Ziffern 0-9 sind lediglich die folgenden Sonderzeichen erlaubt: ,.-");
+                Console.WriteLine("Dabei muss das - als erstes Zeichen vor einer Ziffer gesetzt werden.");
+                Console.WriteLine("Der . fungiert als Trennzeichen an Tausenderstellen.");
+                Console.WriteLine("Das , ist das Trennzeichen für die Nachkommastellen.");
+                Console.WriteLine("Alle drei Sonderzeichen sind optional!");
+                Console.WriteLine();
+                Console.Write("Bitte gib erneut eine Zahl für die Berechnung ein: ");
+                eingabe = Console.ReadLine();
+            }
+
+            return zahl;
         }
     }
 }
