@@ -48,10 +48,6 @@
                     AktuellerFehler = GrenzwertCheck(value);
                     zweiteZahl = value;
                 }
-                else
-                {
-                    zweiteZahl = 1;
-                }
             }
         }
 
