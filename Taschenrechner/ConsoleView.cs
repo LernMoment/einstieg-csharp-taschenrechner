@@ -5,16 +5,18 @@ namespace Taschenrechner
     class ConsoleView
     {
         private RechnerModel model;
+        private string textAusgabe = "";
+
 
         public ConsoleView(RechnerModel model)
         {
             this.model = model;
             BenutzerWillBeenden = false;
+            BenutzerWillNeuRechnen = false;
         }
-
         public bool BenutzerWillBeenden { get; private set; }
-        private string textAusgabe = "";
-
+        public bool BenutzerWillNeuRechnen { get; private set; }
+        
         public void HoleEingabenFuerErsteBerechnungVomBenutzer()
         {
             // TODO: Refactoring benötigt - Probleme: unübersichtlich, nicht DRY, nicht SLA!
@@ -54,13 +56,27 @@ namespace Taschenrechner
             {
                 BenutzerWillBeenden = true;
             }
+            else if (eingabe.ToUpper() == "C")
+            {
+                BenutzerWillNeuRechnen = true;
+            }
             else
             {
+                if (eingabe.ToUpper() == "OPERATOR")
+                {
+                    string altOperator = model.Operation;
+                    model.Operation = HoleOperatorVomBenutzer();
+                    if ((altOperator == "+" || altOperator == "-") && (model.Operation == "*" || model.Operation == "/"))
+                    {
+                        textAusgabe = "(" + textAusgabe + ")" + " ";
+                    }
+                    Console.WriteLine("Bitte gib eine weitere Zahl ein");
+                    eingabe = eingabeAufZahlUeberpruefen(Console.ReadLine()).ToString();
+                }
                 model.ErsteZahl = model.Resultat;
-                //model.ZweiteZahl = Convert.ToDouble(eingabe);
                 model.ZweiteZahl = eingabeAufZahlUeberpruefen(eingabe);
                 textAusgabe += model.Operation + " " + model.ZweiteZahl + " ";
-            }
+            }            
         }
 
         private string HoleNaechsteAktionVomBenutzer()
@@ -68,8 +84,9 @@ namespace Taschenrechner
             string eingabe = "";
             while (eingabe == "")
             {
-                Console.Write("Bitte gib eine weitere Zahl ein (FERTIG zum Beenden): ");
+                Console.Write("Bitte gib eine weitere Zahl ein (FERTIG zum Beenden, OPERATION für neuen Operator oder C zum neustarten): ");
                 eingabe = Console.ReadLine();
+
             }
             return eingabe;
         }
