@@ -15,8 +15,6 @@ namespace Taschenrechner
 
         public void Ausfuehren()
         {
-            view.HoleEingabenFuerErsteBerechnungVomBenutzer();
-
             while (!view.BenutzerWillBeenden)
             {
                 if(view.BenutzerWillNeuRechnen)

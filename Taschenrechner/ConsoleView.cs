@@ -12,13 +12,14 @@ namespace Taschenrechner
         {
             this.model = model;
             BenutzerWillBeenden = false;
-            BenutzerWillNeuRechnen = false;
+            BenutzerWillNeuRechnen = true;
         }
         public bool BenutzerWillBeenden { get; private set; }
         public bool BenutzerWillNeuRechnen { get; private set; }
         
         public void HoleEingabenFuerErsteBerechnungVomBenutzer()
         {
+            BenutzerWillNeuRechnen = false;
             // TODO: Refactoring benötigt - Probleme: unübersichtlich, nicht DRY, nicht SLA!
 
             // Eingabe und Validierung der ersten Zahl
