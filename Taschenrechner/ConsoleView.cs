@@ -54,8 +54,8 @@ namespace Taschenrechner
             }
             else
             {
-                model.ErsteZahl = model.Resultat;
-                model.ZweiteZahl = Convert.ToDouble(eingabe);
+                model.ErsteZahl = Convert.ToDouble(HoleZahlVomBenutzer());
+                model.ZweiteZahl = model.Resultat;
             }
         }
 
@@ -94,7 +94,7 @@ namespace Taschenrechner
 
             do
             {
-                Console.Write("Bitte gib die auszuführende Operation ein (+, -, /, *): ");
+                Console.Write("Bitte gib die auszuführende Operation ein (+, -, /, *, m): ");
                 operation = Console.ReadLine();
                 model.Operation = operation;
 
@@ -126,6 +126,10 @@ namespace Taschenrechner
 
                 case "*":
                     Console.WriteLine("Das Produkt ist: {0}", model.Resultat);
+                    break;
+
+                case "m":
+                    Console.WriteLine("Der Rest von Zahl1 nach Division durch Zahl2 ist: {0}", model.Resultat);
                     break;
 
                 default:
