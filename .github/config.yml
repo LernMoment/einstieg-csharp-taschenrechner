@@ -1,0 +1,28 @@
+# Configuration for welcome - https://github.com/behaviorbot/welcome
+
+# Configuration for new-issue-welcome - https://github.com/behaviorbot/new-issue-welcome
+
+# Comment to be posted to on first time issues
+newIssueWelcomeComment: >
+Hallo und willkommen auf GitHub! 🤩 Freut mich sehr, dass du eines der Tutorials / Kurse von [LernMoment.de](https://www.lernmoment.de/kurse) belegt hast und auch aktiv wirst. Ich bin der LM-Bot und helfe Jan beim Onboarding neuer Teilnehmer. Dein nächstes Issue/Kommentar wird von Jan persönlich beantwortet 🤙.
+
+Nachdem du nun diese Übung absolviert hast, kannst du ja direkt weitergehen zum PullRequest!
+
+Vorher kannst du allerdings noch dieses Issue schließen. Sowohl du als Autor wie auch Jan als Projektinhaber sind berechtigt ein Issue zu schließen. Das kannst du mit dem Button unten auf dieser Seite mache. Probier es doch mal aus.
+
+Jetzt erstmal viel Spaß beim weiteren erkunden von Github und viele Grüße von
+Jan von [LernMoment.de](https://www.lernmoment.de/kurse/)
+
+---
+
+> Mehr Tutorials und Online-Kurse zu C#, GitHub und professioneller Softwareentwicklung findest du auf [LernMoment.de](https://www.lernmoment.de/kurse/)
+
+# Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
+
+# Comment to be posted to on PRs from first time contributors in your repository
+newPRWelcomeComment:
+
+# Configuration for first-pr-merge - https://github.com/behaviorbot/first-pr-merge
+
+# Comment to be posted to on pull requests merged by a first time user
+firstPRMergeComment: 
