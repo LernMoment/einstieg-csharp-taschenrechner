@@ -36,8 +36,8 @@
                 }
             }
         }
-
-        private double zweiteZahl = 0;
+   
+        private double zweiteZahl = 0;        
         public double ZweiteZahl
         {
             get { return zweiteZahl; }
