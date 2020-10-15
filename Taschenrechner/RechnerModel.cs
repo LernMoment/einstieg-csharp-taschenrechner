@@ -71,6 +71,7 @@
                         case "-":
                         case "/":
                         case "*":
+                        case "m":
                             // Es wurde eine gültige Operation übergeben. Daher können wir
                             // den Fehler zurücksetzen ...
                             if (AktuellerFehler == Fehler.UngueltigeOperation)
@@ -121,6 +122,10 @@
                     Resultat = Multipliziere(ErsteZahl, ZweiteZahl);
                     break;
 
+                case "m":
+                    Resultat = Modulo((int)ErsteZahl, (int)ZweiteZahl);
+                    break;
+
                 default:
                     AktuellerFehler = Fehler.UngueltigeOperation;
                     break;
@@ -166,6 +171,11 @@
         private double Multipliziere(double multiplikator, double multiplikand)
         {
             return multiplikator * multiplikand;
+        }
+
+        private int Modulo(int dividend, int divisor)
+        {
+            return dividend % divisor;
         }
     }
 }
